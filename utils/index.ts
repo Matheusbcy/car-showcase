@@ -1,10 +1,12 @@
+import { CarProps } from "@/types";
+
 export async function fetchCars() {
     const headers = {
         "X-RapidAPI-Key": "5d2ffac842msh05711a89cf1c2fap1e5263jsnce469433212e",
         "X_RapidAPI-Host": 'cars-by-api-ninjas.p.rapidapi.com'
     }
 
-    const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', { headers: headers })
+    const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3', { headers: headers })
 
     const result = await response.json()
 
@@ -23,3 +25,23 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
     return rentalRatePerDay.toFixed(0);
 };
+
+export const generateCarImageUrl = async (car: CarProps): Promise<string> => {
+
+    const { make, model, year } = car;
+    const apiKey = '45337631-8c93db199cc1fba26ef4ca353';
+
+    try {
+        const response = await fetch(`https://pixabay.com/api/?key=${apiKey}&q=${make}${year}${model}`);
+        const data = await response.json();
+        if (data.hits && data.hits.length > 0) {
+            console.log(data.hits[0].webformatURL)
+            return data.hits[1].webformatURL;
+        } else {
+            throw new Error('Nenhuma imagem encontrada para esse carro.');
+        }
+    } catch (error) {
+        console.error('Erro ao buscar imagem:', error);
+        return 'URL_DA_IMAGEM_PADRAO';
+    }
+}

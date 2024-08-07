@@ -13,7 +13,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
     ))
 
     return (
-        <div className='searc_manufacturer'>
+        <div className='search-manufacturer'>
             <Combobox value={manufacturer} onChange={setManufacturer}>
                 <div className='relative w-full'>
                     <ComboboxButton className="absolute top-[14px]">
