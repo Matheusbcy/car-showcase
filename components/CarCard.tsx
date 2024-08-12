@@ -17,7 +17,6 @@ const CarCard = ({ car }: CarCardProps) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-<<<<<<< HEAD
     const [imageUrl, setImageUrl] = useState<string>('');
 
     useEffect(() => {
@@ -29,8 +28,6 @@ const CarCard = ({ car }: CarCardProps) => {
         fetchImageUrl();
     }, [car]);
 
-=======
->>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
     return (
         <div className='car-card group'>
             <div className='car-card__content'>
@@ -46,11 +43,7 @@ const CarCard = ({ car }: CarCardProps) => {
                 </span>
             </p>
             <div className='relative w-full h-40 my-3 object-contain'>
-<<<<<<< HEAD
                 <Image src={imageUrl} alt="car model" fill priority className='object-contain' />
-=======
-                <Image src={generateCarImageUrl(car)} alt="car model" fill priority className='object-contain' />
->>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
             </div>
 
             <div className='relative flex w-full mt-2'>
@@ -69,21 +62,12 @@ const CarCard = ({ car }: CarCardProps) => {
                     </div>
                 </div>
                 <div className='car-card__btn-container'>
-<<<<<<< HEAD
                     <CustomButton
                         title={"Ver mais"}
                         containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
                         textStyles="text-white text-[14px] leading-[17px] font-bold"
                         rightIcon="/right-arrow.svg"
                         handleClick={() => setIsOpen(true)}
-=======
-                    <CustomButton 
-                    title={"Ver mais"} 
-                    containerStyles="w-full py-[16px] rounded-full bg-primary-blue" 
-                    textStyles="text-white text-[14px] leading-[17px] font-bold"
-                    rightIcon="/right-arrow.svg"
-                    handleClick={() => setIsOpen(true)}
->>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
                     />
                 </div>
             </div>
