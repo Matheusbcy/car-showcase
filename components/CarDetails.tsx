@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 
 import { CarProps } from '@/types'
@@ -6,6 +7,13 @@ import { Fragment, useEffect, useState } from 'react'
 
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react"
 import { generateCarImageUrl } from '@/utils'
+=======
+import { CarProps } from '@/types'
+import Image from "next/image"
+import { Fragment } from 'react'
+
+import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react"
+>>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
 
 interface CarDetailsProps {
     isOpen: boolean
@@ -14,6 +22,7 @@ interface CarDetailsProps {
 }
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
+<<<<<<< HEAD
     const [imageUrl, setImageUrl] = useState<string>('');
 
     useEffect(() => {
@@ -25,6 +34,8 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
         fetchImageUrl();
     }, [car]);
     
+=======
+>>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -59,6 +70,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                     > <Image src="/close.svg" alt='close' width={20} height={20} className='object-contain' /></button>
                                     <div className='flex-1 flex flex-col gap-3'>
                                         <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
+<<<<<<< HEAD
                                             <Image src={imageUrl} alt="hero" fill className="object-contain" />
                                         </div>
                                         <div className='flex gap-3'>
@@ -70,6 +82,19 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                             </div>
                                             <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
                                                 <Image src={imageUrl} alt="hero" fill className="object-contain" />
+=======
+                                            <Image src="/hero.png" alt="hero" fill className="object-contain" />
+                                        </div>
+                                        <div className='flex gap-3'>
+                                            <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                                                <Image src="/hero.png" alt="hero" fill className="object-contain" />
+                                            </div>
+                                            <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                                                <Image src="/hero.png" alt="hero" fill className="object-contain" />
+                                            </div>
+                                            <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
+                                                <Image src="/hero.png" alt="hero" fill className="object-contain" />
+>>>>>>> a35407f150a9a6722551c64cb1a05b4b362894fc
                                             </div>
                                         </div>
                                     </div>
